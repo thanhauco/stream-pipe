@@ -1,10 +1,16 @@
 package com.example;
 public class Pipeline {
-    private final Consumer consumer;
+    private final ConsumerWrapper consumer;
     private final Processor processor;
-    public Pipeline(Consumer c, Processor p) { consumer = c; processor = p; }
+    private final Dlq dlq;
+    public Pipeline(ConsumerWrapper c, Processor p, Dlq d) { consumer = c; processor = p; dlq = d; }
     public void start() {
         consumer.subscribe("input");
-        // loop logic needs refactor to accept callback
+        while(true) {
+            consumer.poll(msg -> {
+                try { processor.process(msg); }
+                catch(Exception e) { dlq.send(msg, e); }
+            });
+        }
     }
 }
