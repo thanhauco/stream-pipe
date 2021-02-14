@@ -1,2 +1,8 @@
 # Stream Pipe
-Kafka stream processing pipeline.
+
+## Features
+- Kafka Consumer
+- JSON & Avro Processing
+- Dead Letter Queue
+- Health Check API
+- Unit Tests
