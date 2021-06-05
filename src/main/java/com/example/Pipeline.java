@@ -1,16 +1,13 @@
 package com.example;
+import io.micrometer.core.instrument.Metrics;
+import io.micrometer.core.instrument.Counter;
 public class Pipeline {
-    private final ConsumerWrapper consumer;
-    private final Processor processor;
-    private final Dlq dlq;
-    public Pipeline(ConsumerWrapper c, Processor p, Dlq d) { consumer = c; processor = p; dlq = d; }
+    private final Counter processed = Metrics.counter("pipeline.processed");
+    // ... existing
     public void start() {
-        consumer.subscribe("input");
-        while(true) {
-            consumer.poll(msg -> {
-                try { processor.process(msg); }
-                catch(Exception e) { dlq.send(msg, e); }
-            });
-        }
+        consumer.poll(msg -> {
+            processed.increment();
+            // ... rest
+        });
     }
 }
