@@ -1,1 +1,1 @@
-<project>...<dependencies>...<dependency><groupId>io.micrometer</groupId><artifactId>micrometer-core</artifactId><version>1.7.0</version></dependency></dependencies></project>
+<project>...<properties><argLine>-Xlog:gc*:file=gc.log</argLine></properties>...</project>
