@@ -1,7 +1,8 @@
 package com.example;
+/** Main App. */
 public class App {
+    /** Main method. */
     public static void main(String[] args) {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("Shutting down...")));
         // ... rest
     }
 }
