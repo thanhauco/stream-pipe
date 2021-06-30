@@ -1,1 +1,1 @@
-<project>...<build><plugins><plugin><groupId>org.jacoco</groupId><artifactId>jacoco-maven-plugin</artifactId><version>0.8.7</version></plugin></plugins></build>...</project>
+<project>...<build><plugins><plugin><groupId>com.github.spotbugs</groupId><artifactId>spotbugs-maven-plugin</artifactId><version>4.2.0</version></plugin></plugins></build>...</project>
