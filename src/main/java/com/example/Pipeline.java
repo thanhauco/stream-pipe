@@ -1,13 +1,10 @@
 package com.example;
-import io.micrometer.core.instrument.Metrics;
-import io.micrometer.core.instrument.Counter;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 public class Pipeline {
-    private final Counter processed = Metrics.counter("pipeline.processed");
+    private final ExecutorService pool = Executors.newFixedThreadPool(4);
     // ... existing
     public void start() {
-        consumer.poll(msg -> {
-            processed.increment();
-            // ... rest
-        });
+        consumer.poll(msg -> pool.submit(() -> processor.process(msg)));
     }
 }
