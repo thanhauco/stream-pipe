@@ -1,15 +1,13 @@
 # Stream Pipe
 
 ## Features
-- Kafka Consumer
-- JSON & Avro
-- Kafka Streams Windowing
-- JMX Metrics
-- Retry Logic
-- YAML Config
-- Schema Registry
-- Testcontainers
-- Kafka Connect
+- Enterprise V3 Features
+- Micrometer Metrics
+- Lombok Integration
+- Thread Pool Management
+- Graceful Shutdown
+- Log4j2
+- Integration Tests
 
 ## Status
-Enterprise Ready V3.
+Enterprise Scale V4.
