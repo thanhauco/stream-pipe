@@ -1,12 +1,10 @@
 <project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7</version>
-        <executions><execution><goals><goal>prepare-agent</goal></goals></execution></executions>
-      </plugin>
-    </plugins>
-  </build>
+  <dependencies>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+      <version>1.9.0</version>
+    </dependency>
+    <!-- ... rest -->
+  </dependencies>
 </project>
