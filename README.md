@@ -1,13 +1,12 @@
 # Stream Pipe
 
 ## Features
-- Enterprise V3 Features
-- Micrometer Metrics
-- Lombok Integration
-- Thread Pool Management
-- Graceful Shutdown
-- Log4j2
-- Integration Tests
+- Enterprise V4 Features
+- Java 17 Upgrade
+- GitHub Actions
+- JUnit 5
+- Testcontainers
+- OpenTelemetry
 
 ## Status
-Enterprise Scale V4.
+Modernized V5 (2022).
